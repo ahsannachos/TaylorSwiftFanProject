@@ -13,6 +13,7 @@ SwiftEffect is a simple web-based music streamer that integrates with Spotify's 
 - **HTML** for the structure
 - **CSS (Tailwind)** for styling
 - **JavaScript** for interactivity and API integration
+- **Spotify API**
 
 ## Setup Instructions
 1. Clone this repository to your local machine.
