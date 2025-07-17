@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftEffect - A Taylor Swift Discography Experience</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ionicons (needed for play/pause icons) -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="components/style.css" />
+  </head>
+  <body>
+    <div id="album-grid-view" class="container mx-auto px-4 py-8 md:py-12">
+      <header class="text-center mb-10 md:mb-16">
+        <h1>
+          <img
+            src="components/Screenshot_2.png"
+            alt="logo"
+            class="mx-auto h-28 md:h-32"
+          />
+        </h1>
+      </header>
+
+      <main>
+        <div
+          id="album-grid"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
+        >
+          <div
+            data-album-id="5eyZZoQEFQWRHkV2xgAeBw"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/1/1f/Taylor_Swift_-_Taylor_Swift.png"
+              alt="debut"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-debut opacity-0 group-hover:opacity-95 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Taylor Swift</h2>
+              <p class="text-sm font-medium mt-1">2006</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="4hDok0OAJd57SGIT8xuWJH"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://www.backseatmafia.com/wp-content/uploads/2021/04/1CAF9205-4D95-4BBE-A7C0-8B45D8457DD5.jpeg"
+              alt="Fearless"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-fearless opacity-0 group-hover:opacity-90 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Fearless</h2>
+              <p class="text-sm font-medium mt-1">2008</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="6Ar2o9KCqcyYF9J0aQP3au"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/8/8f/Taylor_Swift_-_Speak_Now_cover.png"
+              alt="speaknow"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-speak-now opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Speak Now</h2>
+              <p class="text-sm font-medium mt-1">2010</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="1EoDsNmgTLtmwe1BDAVxV5"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://www.usatoday.com/gcdn/presto/2021/11/10/USAT/cc05201a-9a43-424a-b005-012ad7b79bae-TS_Red_Cover.jpg?crop=4999,4999,x1,y0"
+              alt="Red"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-red opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Red</h2>
+              <p class="text-sm font-medium mt-1">2012</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="5fy0X0JmZRZnVa2UEicIOl"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/d/d5/Taylor_Swift_-_1989_%28Taylor%27s_Version%29.png"
+              alt="1989"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-1989 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">1989</h2>
+              <p class="text-sm font-medium mt-1">2014</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="6DEjYFkNZh67HP7R9PSZvv"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/f/f2/Taylor_Swift_-_Reputation.png"
+              alt="Reputation"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-reputation opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Reputation</h2>
+              <p class="text-sm font-medium mt-1">2017</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="1NAmidJlEaVgA3MpcPFYGq"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/c/cd/Taylor_Swift_-_Lover.png"
+              alt="Lover"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-lover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Lover</h2>
+              <p class="text-sm font-medium mt-1">2019</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="2fenSS68JI1h4Fo296JfGr"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/f/f8/Taylor_Swift_-_Folklore.png"
+              alt="Folklore"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-folklore opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Folklore</h2>
+              <p class="text-sm font-medium mt-1">2020</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="2Xoteh7uEpea4TohMxjtaq"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://i.discogs.com/pCPmRVM9RjsY6zHVyLAi8VPRZKdjNSaxzX5y3ngD54U/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4OTE4/MjAyLTE3MTAyNzcw/NTMtOTEyOS5qcGVn.jpeg"
+              alt="Evermore"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-evermore opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Evermore</h2>
+              <p class="text-sm font-medium mt-1">2020</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="151w1FgRZfnKZA9FEcg9Z3"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Midnights_-_Taylor_Swift.png/250px-Midnights_-_Taylor_Swift.png"
+              alt="Midnights"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-midnights opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Midnights</h2>
+              <p class="text-sm font-medium mt-1">2022</p>
+            </div>
+          </div>
+
+          <div
+            data-album-id="5H7ixXZfsNMGbIE5OBSpcb"
+            class="group album-card relative aspect-square rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <img
+              src="https://i.scdn.co/image/ab67616d0000b2738ecc33f195df6aa257c39eaa"
+              alt="TTPD"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-4 text-center text-white font-bold bg-ttpd opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl">Tortured Poets Department</h2>
+              <p class="text-sm font-medium mt-1">2024</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div
+      id="tracklist-view"
+      class="hidden container mx-auto max-w-4xl px-4 py-8 md:py-12"
+    >
+      <main
+        class="bg-white/70 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden"
+      >
+        <div class="p-6 md:p-10">
+          <button
+            id="back-to-albums"
+            class="mb-6 flex items-center text-gray-600 hover:text-gray-900"
+          >
+            <ion-icon name="arrow-back-outline" class="mr-2 text-xl"></ion-icon>
+            Back to Albums
+          </button>
+          <h1
+            id="albumTitle"
+            class="text-4xl md:text-5xl font-serif text-gray-900 mb-2"
+          >
+            Loading album…
+          </h1>
+          <p id="albumArtist" class="text-lg text-gray-600 mb-8"></p>
+          <div id="tracksContainer" class="space-y-2"></div>
+        </div>
+      </main>
+    </div>
+
+    <footer
+      id="player-bar"
+      class="hidden fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-3 shadow-t-lg flex items-center justify-between z-50"
+    >
+      <div class="flex items-center">
+        <img
+          id="player-album-art"
+          src=""
+          alt="Album Art"
+          class="w-12 h-12 rounded-md mr-4"
+        />
+        <div>
+          <p id="player-track-name" class="font-semibold">Track Name</p>
+          <p id="player-artist-name" class="text-sm text-gray-400">Artist</p>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <button id="player-toggle-play" class="text-4xl mx-auto">
+          <ion-icon name="pause-circle"></ion-icon>
+        </button>
+      </div>
+    </footer>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

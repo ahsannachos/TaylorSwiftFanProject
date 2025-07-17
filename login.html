@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in with Spotify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-br from-gray-900 via-grey-800 to-black flex items-center justify-center h-screen"
+>
+    <button onclick="login()" class="text-white text-2xl sm:text-3xl font-light tracking-wide">Login with Spotify</button>
+    <script>
+      const client_id = "6c506579fe4a47568a31794025245b6e";
+      const redirect_uri = "https://ape-related-strangely.ngrok-free.app/callback.html";
+
+      function generatecode(length = 128) {
+        const combinations =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let verifier = "";
+        const array = crypto.getRandomValues(new Uint8Array(length));
+        for (let i = 0; i < length; i++) {
+          const placeholder = array[i] % combinations.length;
+          verifier += combinations[placeholder];
+        }
+        return verifier;
+      }
+
+      async function challenges(verifier) {
+        const encoder = new TextEncoder().encode(verifier);
+        const digest = await crypto.subtle.digest("SHA-256", encoder);
+        return btoa(String.fromCharCode(...new Uint8Array(digest)))
+          .replace(/=/g, "")
+          .replace(/\+/g, "-")
+          .replace(/\//g, "_");
+      }
+
+      async function login() {
+        const verifier = generatecode();
+        const challenge = await challenges(verifier);
+        localStorage.setItem("verifier", verifier);
+
+        const scope =
+          "user-read-private user-read-email streaming user-modify-playback-state";
+
+        const authUrl = new URL("https://accounts.spotify.com/authorize");
+        const params = {
+          response_type: "code",
+          client_id: client_id,
+          scope,
+          code_challenge_method: "S256",
+          code_challenge: challenge,
+          redirect_uri: redirect_uri,
+        };
+        authUrl.search = new URLSearchParams(params).toString();
+        window.location.href = authUrl.toString();
+      }
+    </script>
+  </body>
+</html>

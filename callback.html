@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authenticating</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes dots {
+        0% {
+          content: "";
+        }
+        33% {
+          content: ".";
+        }
+        66% {
+          content: "..";
+        }
+        100% {
+          content: "...";
+        }
+      }
+      .loading-dots::after {
+        display: inline-block;
+        animation: dots 1.5s steps(3, end) infinite;
+        content: "";
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-grey-800 to-black flex items-center justify-center h-screen"
+  >
+    <div class="text-center">
+      <p class="text-white text-2xl sm:text-3xl font-light tracking-wide">
+        Authenticating<span class="loading-dots"></span>
+      </p>
+    </div>
+  </body>
+  <script>
+    const client_id = "6c506579fe4a47568a31794025245b6e";
+    const redirect_uri =
+      "https://ape-related-strangely.ngrok-free.app/callback.html";
+
+    const code = new URLSearchParams(window.location.search).get("code");
+    const verifier = localStorage.getItem("verifier");
+
+    if (!code) {
+      document.body.textContent = "No code in URL.";
+    }
+
+    fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        client_id,
+        grant_type: "authorization_code",
+        code,
+        redirect_uri,
+        code_verifier: verifier,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.access_token) {
+          localStorage.setItem("spotifyAccessToken", data.access_token);
+          window.location.href = "mainpage.html";
+        } else {
+          document.body.textContent = "Token exchange failed";
+          console.log(data);
+        }
+      });
+  </script>
+</html>
