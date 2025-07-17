@@ -1,4 +1,4 @@
-# SwiftEffect Fan=Based  Streaming Web App
+# SwiftEffect Fan-Based  Streaming Web App
 
 SwiftEffect is a simple web-based music streamer that integrates with Spotify's API, allowing users to explore and play Taylor Swift's discography seamlessly. This project includes the ability to authenticate users with Spotify, view album artwork, and stream tracks from a collection of Taylor Swift's albums.
 
